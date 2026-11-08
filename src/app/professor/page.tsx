@@ -15,7 +15,7 @@ type Summary = {
   mean_consumo: number | null; mean_residuos: number | null;
 };
 
-export function summaryDims(s?: Summary): (number | null)[] {
+function summaryDims(s?: Summary): (number | null)[] {
   if (!s) return [null, null, null, null, null];
   return [s.mean_alimentacao, s.mean_transporte, s.mean_energia, s.mean_consumo, s.mean_residuos].map((v) => (v === null ? null : Number(v)));
 }
